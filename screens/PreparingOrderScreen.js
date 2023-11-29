@@ -9,7 +9,7 @@ export default function PreparingOrderScreen() {
 
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate("Delivery");
+      navigation.navigate("Basket"); // Delivery
     }, 4000);
   }, []);
 
@@ -19,7 +19,7 @@ export default function PreparingOrderScreen() {
         source={require("../assets/orderLoding.gif")}
         animation="slideInUp"
         iterationCount={1}
-        className="h-96 w-96"
+        className="h-80 w-80"
       />
       <Animatable.Text
         animation="slideInUp"
