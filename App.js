@@ -22,6 +22,13 @@ export default function App() {
               headerShown: false,
             }}
           />
+          <Stack.Screen
+            name="PreparingOrder"
+            component={PreparingOrderScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>
