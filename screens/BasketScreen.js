@@ -11,6 +11,7 @@ import {
   selectBasketTotal,
 } from "../features/basketSlice";
 import { urlFor } from "../sanity";
+import { DELIVERY_FEE } from "../constants";
 
 export default function BasketScreen() {
   const navigation = useNavigation();
@@ -80,7 +81,7 @@ export default function BasketScreen() {
 
                 <View className="flex-row justify-center items-center border-[1px] rounded-md px-3 h-10 border-[#00CCBB]">
                   <TouchableOpacity
-                    onPress={() => removeItemFromBasket(items[0].id)} // treba smanjiti za count 1, ako je count 0 onda ga izbrise
+                    onPress={() => removeItemFromBasket(items[0].id)}
                   >
                     <MinusIcon size={20} color="#00CCBB" />
                   </TouchableOpacity>
@@ -96,8 +97,18 @@ export default function BasketScreen() {
 
         <View className="absolute w-full bottom-0 z-50 bg-white p-4 border-t-[#00000014] border-t-[1px]">
           <View className="flex-row justify-between pb-4">
+            <Text className="text-xl">Subtotal</Text>
+            <Text className="text-xl">{basketTotal} €</Text>
+          </View>
+          <View className="flex-row justify-between pb-4">
+            <Text className="text-xl">Delivery Fee</Text>
+            <Text className="text-xl">{DELIVERY_FEE} €</Text>
+          </View>
+          <View className="flex-row justify-between pb-4">
             <Text className="font-bold text-xl">Total</Text>
-            <Text className="font-bold text-xl">{basketTotal} €</Text>
+            <Text className="font-bold text-xl">
+              {basketTotal + DELIVERY_FEE} €
+            </Text>
           </View>
           <TouchableOpacity className="flex-row rounded-lg justify-center items-center px-6 py-3 bg-[#00CCBB]">
             <Text className="text-white text-xl font-extrabold">
