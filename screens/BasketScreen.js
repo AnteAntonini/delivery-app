@@ -20,22 +20,13 @@ export default function BasketScreen() {
   const items = useSelector(selectBasketItems);
   const basketTotal = useSelector(selectBasketTotal);
 
-  const [groupItemsInBasket, setGroupItemsInBasket] = useState({});
+  const [groupItemsInBasket, setGroupItemsInBasket] = useState([]);
 
   useEffect(() => {
-    const groupItems = [];
-    const itemMap = {};
-
-    items.forEach((item) => {
-      if (!itemMap[item.id]) {
-        //is item id already seen?
-        itemMap[item.id] = true;
-        groupItems.push({ id: item.id, items: [] });
-      }
-
-      const index = groupItems.findIndex((group) => group.id === item.id);
-      groupItems[index].items.push(item);
-    });
+    const groupItems = items.reduce((results, item) => {
+      (results[item.id] = results[item.id] || []).push(item);
+      return results;
+    }, {});
 
     setGroupItemsInBasket(groupItems);
   }, [items]);
@@ -59,34 +50,36 @@ export default function BasketScreen() {
             </TouchableOpacity>
           </View>
           <View>
-            {Object.entries(groupItemsInBasket).map(([key, items]) => (
+            {Object.entries(groupItemsInBasket).map(([key, groupItems]) => (
               <View key={key} className="flex-row items-center py-4">
                 <View className="flex-row items-center flex-1">
                   <Image
                     source={{
-                      uri: urlFor(items[0].image).url(),
+                      uri: urlFor(groupItems[0].image).url(),
                     }}
                     className="w-16 h-16"
                   />
                   <View className="px-2 justify-start flex-1">
                     <Text className="font-semibold text-lg leading-5">
-                      {items[0].name}
+                      {groupItems[0]?.name}
                     </Text>
-                    <Text>{items[0].price} € / unit</Text>
+                    <Text>{groupItems[0]?.price} € / unit</Text>
                     <Text className="font-semibold text-lg leading-6  text-[#00CCBB]">
-                      {items[0].price * items.length} €
+                      {groupItems[0].price * groupItems.length} €
                     </Text>
                   </View>
                 </View>
 
                 <View className="flex-row justify-center items-center border-[1px] rounded-md px-3 h-10 border-[#00CCBB]">
                   <TouchableOpacity
-                    onPress={() => removeItemFromBasket(items[0].id)}
+                    onPress={() => removeItemFromBasket(groupItems[0]?.id)}
                   >
                     <MinusIcon size={20} color="#00CCBB" />
                   </TouchableOpacity>
-                  <Text className="text-base px-3">{items.length}</Text>
-                  <TouchableOpacity onPress={() => addItemToBasket(items[0])}>
+                  <Text className="text-base px-3">{groupItems.length}</Text>
+                  <TouchableOpacity
+                    onPress={() => addItemToBasket(groupItems[0])}
+                  >
                     <PlusIcon size={20} color="#00CCBB" />
                   </TouchableOpacity>
                 </View>
@@ -110,7 +103,10 @@ export default function BasketScreen() {
               {basketTotal + DELIVERY_FEE} €
             </Text>
           </View>
-          <TouchableOpacity className="flex-row rounded-lg justify-center items-center px-6 py-3 bg-[#00CCBB]">
+          <TouchableOpacity
+            className="flex-row rounded-lg justify-center items-center px-6 py-3 bg-[#00CCBB]"
+            onPress={() => navigation.navigate("PreparingOrder")}
+          >
             <Text className="text-white text-xl font-extrabold">
               Go to Checkout
             </Text>
