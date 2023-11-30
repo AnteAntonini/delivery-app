@@ -16,10 +16,8 @@ export default function HomeScreen() {
   const navigation = useNavigation();
   const [featuredCategories, setFeaturedCategories] = useState([]);
 
-  // as soon as screen mounts do something, when UI loads
   useLayoutEffect(() => {
     navigation.setOptions({
-      // we can modify default navigation, like navbar(header)
       headerShown: false,
     });
   }, []);
@@ -40,12 +38,8 @@ export default function HomeScreen() {
       .then((data) => setFeaturedCategories(data));
   }, []);
 
-  //Everything in React Native is flex by default, and flex-direction is column
-
   return (
     <SafeAreaView className="bg-white pt-5">
-      {/* push bellow status bar, applies padding to not cover navigation bars, tab bars, toolbars and other views */}
-
       {/* Header */}
       <View className="flex-row pb-3 items-center mx-4 space-x-2">
         <Image
