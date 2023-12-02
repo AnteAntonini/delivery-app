@@ -14,7 +14,7 @@ export default function PreparingOrderScreen() {
   }, []);
 
   return (
-    <SafeAreaView className="bg-[#00CCBB] flex-1 justify-center items-center">
+    <SafeAreaView className="bg-[#317AC7] flex-1 justify-center items-center">
       <Animatable.Image
         source={require("../assets/orderLoding.gif")}
         animation="slideInUp"

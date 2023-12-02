@@ -64,23 +64,23 @@ export default function BasketScreen() {
                       {groupItems[0]?.name}
                     </Text>
                     <Text>{groupItems[0]?.price} € / unit</Text>
-                    <Text className="font-semibold text-lg leading-6  text-[#00CCBB]">
+                    <Text className="font-semibold text-lg leading-6  text-[#317AC7]">
                       {groupItems[0].price * groupItems.length} €
                     </Text>
                   </View>
                 </View>
 
-                <View className="flex-row justify-center items-center border-[1px] rounded-md px-3 h-10 border-[#00CCBB]">
+                <View className="flex-row justify-center items-center border-[1px] rounded-md px-3 h-10 border-[#317AC7]">
                   <TouchableOpacity
                     onPress={() => removeItemFromBasket(groupItems[0]?.id)}
                   >
-                    <MinusIcon size={20} color="#00CCBB" />
+                    <MinusIcon size={20} color="#317AC7" />
                   </TouchableOpacity>
                   <Text className="text-base px-3">{groupItems.length}</Text>
                   <TouchableOpacity
                     onPress={() => addItemToBasket(groupItems[0])}
                   >
-                    <PlusIcon size={20} color="#00CCBB" />
+                    <PlusIcon size={20} color="#317AC7" />
                   </TouchableOpacity>
                 </View>
               </View>
@@ -104,7 +104,7 @@ export default function BasketScreen() {
             </Text>
           </View>
           <TouchableOpacity
-            className="flex-row rounded-lg justify-center items-center px-6 py-3 bg-[#00CCBB]"
+            className="flex-row rounded-lg justify-center items-center px-6 py-3 bg-[#317AC7]"
             onPress={() => navigation.navigate("PreparingOrder")}
           >
             <Text className="text-white text-xl font-extrabold">

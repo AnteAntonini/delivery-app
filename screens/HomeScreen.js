@@ -51,11 +51,11 @@ export default function HomeScreen() {
           <Text className="font-bold text-gray-400 text-xs">Deliver Now!</Text>
           <Text className="font-bold text-xl">
             Current Location
-            <ChevronDownIcon size={20} color="#00CCBB" />
+            <ChevronDownIcon size={20} color="#317AC7" />
           </Text>
         </View>
 
-        <UserIcon size={35} color="#00CCBB" />
+        <UserIcon size={35} color="#317AC7" />
       </View>
 
       {/* Search */}
@@ -68,7 +68,7 @@ export default function HomeScreen() {
           />
         </View>
 
-        <AdjustmentsVerticalIcon size={20} color="#00CCBB" />
+        <AdjustmentsVerticalIcon size={20} color="#317AC7" />
       </View>
 
       {/* Body */}

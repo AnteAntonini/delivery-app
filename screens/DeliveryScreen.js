@@ -12,7 +12,7 @@ export default function DeliveryScreen() {
   // const restaurant = useSelector(selectRestaurant);
 
   return (
-    <View className="bg-[#00CCBB] flex-1">
+    <View className="bg-[#317AC7] flex-1">
       <SafeAreaView className="z-50">
         <View className="flex-row justify-between items-center p-5">
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>
@@ -34,7 +34,7 @@ export default function DeliveryScreen() {
               className="h-20 w-20"
             />
           </View>
-          <Progress.Bar size={30} color="#00CCBB" indeterminate={true} />
+          <Progress.Bar size={30} color="#317AC7" indeterminate={true} />
           <Text className="text-base text-gray-400 pt-4">
             Your order is being prepared
           </Text>
@@ -52,7 +52,7 @@ export default function DeliveryScreen() {
             <Text className="text-lg">Sashen Hasindu</Text>
             <Text className="text-gray-400">Your Rider</Text>
           </View>
-          <Text className="text-[#00CCBB] text-lg">Call</Text>
+          <Text className="text-[#317AC7] text-lg">Call</Text>
         </SafeAreaView>
       </View>
     </View>

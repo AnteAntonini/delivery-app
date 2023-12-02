@@ -16,7 +16,7 @@ export default function BasketChip() {
   return (
     <View className="absolute w-full bottom-0 z-50  bg-white p-4 border-t-[#00000014] border-t-[1px]">
       <TouchableOpacity
-        className="flex-row rounded-lg justify-between items-center px-6 py-3 bg-[#00CCBB]"
+        className="flex-row rounded-lg justify-between items-center px-6 py-3 bg-primary"
         onPress={() => navigation.navigate("Basket")}
       >
         <Text className="text-white text-xl font-extrabold px-2 bg-[#2e33331a] rounded-sm">

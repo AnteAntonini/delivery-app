@@ -33,7 +33,7 @@ export default function DishRow({ id, name, description, price, image }) {
           <View className="flex-1 pr-2">
             <Text className="text-xl font-bold mb-1">
               {items.length > 0 && (
-                <Text className="text-[#00CCBB]">{items.length}x </Text>
+                <Text className="text-[#317AC7]">{items.length}x </Text>
               )}
               {name}
             </Text>
@@ -43,7 +43,7 @@ export default function DishRow({ id, name, description, price, image }) {
               </Text>
             )}
             <Text
-              style={{ color: "#00CCBB" }}
+              style={{ color: "#317AC7" }}
               className="text-base text-gray-400 mt-2"
             >
               {price} €
@@ -65,7 +65,7 @@ export default function DishRow({ id, name, description, price, image }) {
                 onPress={addItemToBasket}
                 className="flex justify-center h-24 p-2 ml-4 border-[1px] border-gray-100"
               >
-                <PlusIcon size={22} color="#00CCBB" />
+                <PlusIcon size={22} color="#317AC7" />
               </TouchableOpacity>
             )}
             {items.length > 0 && (
@@ -74,7 +74,7 @@ export default function DishRow({ id, name, description, price, image }) {
                   className="border-[1px] p-2 border-gray-100"
                   onPress={addItemToBasket}
                 >
-                  <PlusIcon size={22} color="#00CCBB" />
+                  <PlusIcon size={22} color="#317AC7" />
                 </TouchableOpacity>
 
                 {items.length > 1 ? (
@@ -82,14 +82,14 @@ export default function DishRow({ id, name, description, price, image }) {
                     className="border-[1px] p-2 border-gray-100"
                     onPress={removeItemFromBasket}
                   >
-                    <MinusIcon size={22} color="#00CCBB" />
+                    <MinusIcon size={22} color="#317AC7" />
                   </TouchableOpacity>
                 ) : (
                   <TouchableOpacity
                     className="border-[1px] p-2 border-gray-100"
                     onPress={removeItemFromBasket}
                   >
-                    <TrashIcon size={22} color="#00CCBB" />
+                    <TrashIcon size={22} color="#317AC7" />
                   </TouchableOpacity>
                 )}
               </View>

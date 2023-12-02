@@ -47,7 +47,7 @@ export default function RestaurantScreen() {
             onPress={navigation.goBack}
             className="absolute top-14 left-5 p-2 bg-gray-100 rounded-full"
           >
-            <ArrowLeftIcon size={22} color="#00CCBB" />
+            <ArrowLeftIcon size={22} color="#317AC7" />
           </TouchableOpacity>
           <View className="bg-white">
             <View className="px-4 pt-4">
