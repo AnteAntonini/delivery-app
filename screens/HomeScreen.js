@@ -11,6 +11,7 @@ import {
 import Categories from "../components/Categories";
 import FeaturedRow from "../components/FeaturedRow";
 import sanityClient from "../sanity";
+import { PRIMARY_COLOR } from "../constants";
 
 export default function HomeScreen() {
   const navigation = useNavigation();
@@ -51,11 +52,11 @@ export default function HomeScreen() {
           <Text className="font-bold text-gray-400 text-xs">Deliver Now!</Text>
           <Text className="font-bold text-xl">
             Current Location
-            <ChevronDownIcon size={20} color="#317AC7" />
+            <ChevronDownIcon size={20} color={PRIMARY_COLOR} />
           </Text>
         </View>
 
-        <UserIcon size={35} color="#317AC7" />
+        <UserIcon size={35} color={PRIMARY_COLOR} />
       </View>
 
       {/* Search */}
@@ -68,7 +69,7 @@ export default function HomeScreen() {
           />
         </View>
 
-        <AdjustmentsVerticalIcon size={20} color="#317AC7" />
+        <AdjustmentsVerticalIcon size={20} color={PRIMARY_COLOR} />
       </View>
 
       {/* Body */}

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ArrowRightIcon } from "react-native-heroicons/outline";
 import RestaurantCard from "./RestaurantCard";
 import sanityClient from "../sanity";
+import { PRIMARY_COLOR } from "../constants";
 
 export default function FeaturedRow({ id, title, description }) {
   const [restaurants, setRestaurants] = useState([]);
@@ -33,7 +34,7 @@ export default function FeaturedRow({ id, title, description }) {
     <View>
       <View className="mt-4 flex-row items-center justify-between px-4">
         <Text className="font-bold text-lg">{title}</Text>
-        <ArrowRightIcon color="#317AC7" />
+        <ArrowRightIcon color={PRIMARY_COLOR} />
       </View>
       <Text className="text-xs text-gray-500 px-4">{description}</Text>
 

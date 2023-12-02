@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { selectRestaurant } from "../features/restaurantSlice";
 import { XMarkIcon } from "react-native-heroicons/solid";
 import * as Progress from "react-native-progress";
+import { PRIMARY_COLOR } from "../constants";
 
 export default function DeliveryScreen() {
   const navigation = useNavigation();
@@ -34,7 +35,7 @@ export default function DeliveryScreen() {
               className="h-20 w-20"
             />
           </View>
-          <Progress.Bar size={30} color="#317AC7" indeterminate={true} />
+          <Progress.Bar size={30} color={PRIMARY_COLOR} indeterminate={true} />
           <Text className="text-base text-gray-400 pt-4">
             Your order is being prepared
           </Text>

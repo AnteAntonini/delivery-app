@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import { PRIMARY_COLOR } from "../constants";
 
 import {
   addToBasket,
@@ -65,7 +66,7 @@ export default function DishRow({ id, name, description, price, image }) {
                 onPress={addItemToBasket}
                 className="flex justify-center h-24 p-2 ml-4 border-[1px] border-gray-100"
               >
-                <PlusIcon size={22} color="#317AC7" />
+                <PlusIcon size={22} color={PRIMARY_COLOR} />
               </TouchableOpacity>
             )}
             {items.length > 0 && (
@@ -74,7 +75,7 @@ export default function DishRow({ id, name, description, price, image }) {
                   className="border-[1px] p-2 border-gray-100"
                   onPress={addItemToBasket}
                 >
-                  <PlusIcon size={22} color="#317AC7" />
+                  <PlusIcon size={22} color={PRIMARY_COLOR} />
                 </TouchableOpacity>
 
                 {items.length > 1 ? (
@@ -82,14 +83,14 @@ export default function DishRow({ id, name, description, price, image }) {
                     className="border-[1px] p-2 border-gray-100"
                     onPress={removeItemFromBasket}
                   >
-                    <MinusIcon size={22} color="#317AC7" />
+                    <MinusIcon size={22} color={PRIMARY_COLOR} />
                   </TouchableOpacity>
                 ) : (
                   <TouchableOpacity
                     className="border-[1px] p-2 border-gray-100"
                     onPress={removeItemFromBasket}
                   >
-                    <TrashIcon size={22} color="#317AC7" />
+                    <TrashIcon size={22} color={PRIMARY_COLOR} />
                   </TouchableOpacity>
                 )}
               </View>

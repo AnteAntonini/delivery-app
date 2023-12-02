@@ -9,6 +9,7 @@ import {
 } from "react-native-heroicons/solid";
 import DishRow from "../components/DishRow";
 import BasketChip from "../components/BasketChip";
+import { PRIMARY_COLOR } from "../constants";
 
 export default function RestaurantScreen() {
   const navigation = useNavigation();
@@ -47,7 +48,7 @@ export default function RestaurantScreen() {
             onPress={navigation.goBack}
             className="absolute top-14 left-5 p-2 bg-gray-100 rounded-full"
           >
-            <ArrowLeftIcon size={22} color="#317AC7" />
+            <ArrowLeftIcon size={22} color={PRIMARY_COLOR} />
           </TouchableOpacity>
           <View className="bg-white">
             <View className="px-4 pt-4">

@@ -11,7 +11,7 @@ import {
   selectBasketTotal,
 } from "../features/basketSlice";
 import { urlFor } from "../sanity";
-import { DELIVERY_FEE } from "../constants";
+import { DELIVERY_FEE, PRIMARY_COLOR } from "../constants";
 
 export default function BasketScreen() {
   const navigation = useNavigation();
@@ -74,13 +74,13 @@ export default function BasketScreen() {
                   <TouchableOpacity
                     onPress={() => removeItemFromBasket(groupItems[0]?.id)}
                   >
-                    <MinusIcon size={20} color="#317AC7" />
+                    <MinusIcon size={20} color={PRIMARY_COLOR} />
                   </TouchableOpacity>
                   <Text className="text-base px-3">{groupItems.length}</Text>
                   <TouchableOpacity
                     onPress={() => addItemToBasket(groupItems[0])}
                   >
-                    <PlusIcon size={20} color="#317AC7" />
+                    <PlusIcon size={20} color={PRIMARY_COLOR} />
                   </TouchableOpacity>
                 </View>
               </View>
